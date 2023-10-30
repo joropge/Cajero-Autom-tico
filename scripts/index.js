@@ -96,3 +96,31 @@ function depositar() {
           window.location.replace("/templates/cajeroBloqueado.html");
         }
       }
+      
+      //Esta función nos permite cambiar la contraseña
+  function cambiar(){
+
+    // alert("¿Quiere usted cambiar la contraseña?");
+    // if (aceptar===true) {
+      pin = prompt("Escriba la contraseña")
+      if (pin == PIN_CORRECTO) {
+        let cambioContrasenia = prompt("Escriba la nueva contraseña")
+        
+        PIN_CORRECTO = cambioContrasenia;
+        alert(`ha cambiado la contraseña correctamente, esta es: ${cambioContrasenia}`)
+        
+      }else{
+        alert("El PIN no es el correcto intentelo de nuevo");
+      }
+      
+
+    // }
+    
+  }
+  
+  
+  // Función para validar que el IBAN es correcto
+  function validarIBAN(iban) {
+    var IBAN = /^(ES\d{22})$/;
+    return IBAN.test(iban);
+  }
