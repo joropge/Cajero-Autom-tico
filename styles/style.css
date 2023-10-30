@@ -90,8 +90,17 @@ header{
 
 
 .resultado {
-    box-shadow: 0, 2px, 10px;
-    background-color: #73c273;
+    /*sombereado*/
+    box-shadow: 10px 0cm 5px 0px rgba(139,134,134,0.75);
+    border:solid 1px white;
+    border-radius: 20px;
+    height: 10vh;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 250px;
+    background-color: #000000;
     margin-bottom: 20px;
     font-size: 1.2rem;
     color: aliceblue;
