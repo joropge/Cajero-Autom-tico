@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'Bruno'; /* El nombre que desees para la fuente */
+    src: url('../assets/fonts/Bruno/BrunoAce-Regular.ttf') format('truetype'); /* Ruta al archivo de la fuente */
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Bruno';
+}
+body .block1, body .adios1{
+    color: black;
+}
+
+.block1{
+    background-color: red;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    
+}
+.adios1{
+    background-color: rgb(21, 255, 0);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    
+}
