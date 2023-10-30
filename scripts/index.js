@@ -61,3 +61,38 @@ function depositar() {
       actualizarSaldoTemplate()
     }
   }
+
+    // Función para transferir saldo
+    function transferir() {
+        const monto = parseFloat(prompt("Ingrese la cantidad a transferir:"));
+        if (isNaN(monto) || monto <= 0 || monto > saldo) {
+          alert("Cantidad inválida o insuficiente. Intente de nuevo.");
+        } else {
+          const cuentaDestino = prompt("Ingrese el número de cuenta de destino:");
+          if (!validarIBAN(cuentaDestino)) {
+            alert(`La cuenta ${cuentaDestino} no es una cuenta bancaria válida`)
+            return
+          }
+          alert(`Se han transferido ${monto.toFixed(2)} € a la cuenta ${cuentaDestino}.`);
+          saldo -= monto;
+          actualizarSaldoTemplate()
+        }
+      }
+      
+      // Función para iniciar sesión
+      function iniciarSesion() {
+        let pin = prompt("Ingrese su PIN:");
+        while (pin !== PIN_CORRECTO && intentosRestantes > 1) {
+          intentosRestantes--;
+          alert(`PIN incorrecto. Le quedan ${intentosRestantes} intentos.`);
+          pin = prompt("Ingrese su PIN:");
+        }
+      
+        if (pin === PIN_CORRECTO) {
+          alert("Inicio de sesión exitoso.");
+          actualizarSaldoTemplate()
+        } else {
+          alert("PIN incorrecto. El cajero se ha bloqueado.");
+          window.location.replace("/templates/cajeroBloqueado.html");
+        }
+      }
